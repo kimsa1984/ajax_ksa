@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,64 +56,3 @@
     });
   </script>
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
- 
- <script>
-   $(function(){
-     $.ajax({
-       url:"./class_609.json",
-       dataType:"json",
-       success:function(data){
-
-         if(data.length>0){
-           var tb=$("<table/>");
-
-           for(var i in data){
-             var $id=data[i].id;
-             var $name=data[i].name;
-             var $gender=data[i].genger;
-             var $team=data[i].team;
-
-             var row=$("<tr/>").append(
-               $("<td/>").text($id),
-               $("<td/>").text($name),
-               $("<td/>").text($gender),
-               $("<td/>").text($team),
-             );
-
-             tb.append(row);
-           }
-           $(".wrap").append(tb);
-         }
-       }
-     });
-   });
- </script>
-
- 
-
-</head>
-<body>
-  <div class="wrap"></div>
-  <input id="myinput" type="text" placeholder="Search..">
-
-  <script>
-    //search
-    $("#myinput").on("keyup",function(){
-      var value=$(this).val();
-      $(".wrap tr").filter(function(){
-        $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1)
-      });
-    });
-  </script>
-</body>
->>>>>>> ca9f16c93a1a47926c053ba028d203f505586279
-</html>
